@@ -58,6 +58,51 @@
             timeout-ms = <30>;
             require-prior-idle-ms = <50>;
         };
+
+        // Horizontal combos
+        combo_esc {
+            bindings = <&kp ESC>;
+            key-positions = <0 1>;
+            timeout-ms = <18>;
+            require-prior-idle-ms = <50>;
+        };
+
+        combo_tab {
+            bindings = <&kp TAB>;
+            key-positions = <10 11>;
+            timeout-ms = <18>;
+            require-prior-idle-ms = <50>;
+        };
+
+        combo_copy {
+            bindings = <&kp LC(C)>;
+            key-positions = <23 24>;
+            timeout-ms = <18>;
+            require-prior-idle-ms = <50>;
+        };
+
+        combo_paste {
+            bindings = <&kp LC(V)>;
+            key-positions = <24 25>;
+            timeout-ms = <18>;
+            require-prior-idle-ms = <50>;
+        };
+
+        // Tap: ( | Shift: {
+        combo_lpar_lbrc {
+            bindings = <&lpar_lbrc>;
+            key-positions = <19 20>;
+            timeout-ms = <18>;
+            require-prior-idle-ms = <50>;
+        };
+
+        // Tap: ) | Shift: }
+        combo_rpar_rbrc {
+            bindings = <&rpar_rbrc>;
+            key-positions = <20 21>;
+            timeout-ms = <18>;
+            require-prior-idle-ms = <50>;
+        };
     };
 
     conditional_layers {
@@ -137,6 +182,22 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp BSPC>, <&kp DEL>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        // Tap: ( | Shift: {
+        lpar_lbrc: lpar_lbrc {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp LPAR>, <&kp LBRC>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        // Tap: ) | Shift: }
+        rpar_rbrc: rpar_rbrc {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp RPAR>, <&kp RBRC>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
