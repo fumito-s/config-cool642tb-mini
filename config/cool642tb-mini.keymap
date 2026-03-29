@@ -27,6 +27,37 @@
             bindings = <&kp LANG1>;
             key-positions = <18 19>;
         };
+
+        // Vertical combos
+        combo_excl {
+            bindings = <&kp EXCL>;
+            key-positions = <0 10>;
+            timeout-ms = <30>;
+            require-prior-idle-ms = <50>;
+        };
+
+        combo_at {
+            bindings = <&kp AT>;
+            key-positions = <1 11>;
+            timeout-ms = <30>;
+            require-prior-idle-ms = <50>;
+        };
+
+        // Tap: = | Shift: +
+        combo_equal_plus {
+            bindings = <&equal_plus>;
+            key-positions = <8 20>;
+            timeout-ms = <30>;
+            require-prior-idle-ms = <50>;
+        };
+
+        // Tap: - | Shift: _
+        combo_minus_under {
+            bindings = <&minus_under>;
+            key-positions = <7 19>;
+            timeout-ms = <30>;
+            require-prior-idle-ms = <50>;
+        };
     };
 
     conditional_layers {
@@ -106,6 +137,22 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp BSPC>, <&kp DEL>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        // Tap: = | Shift: +
+        equal_plus: equal_plus {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp EQUAL>, <&kp PLUS>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        // Tap: - | Shift: _
+        minus_under: minus_under {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp MINUS>, <&kp UNDER>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
