@@ -103,6 +103,20 @@
             timeout-ms = <25>;
             require-prior-idle-ms = <50>;
         };
+
+        combo_lbkt {
+            bindings = <&lbkt_morph>;
+            key-positions = <7 8>;
+            timeout-ms = <25>;
+            require-prior-idle-ms = <50>;
+        };
+
+        combo_rbkt {
+            bindings = <&rbkt_morph>;
+            key-positions = <8 9>;
+            timeout-ms = <25>;
+            require-prior-idle-ms = <50>;
+        };
     };
 
     conditional_layers {
@@ -214,6 +228,22 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp MINUS>, <&kp UNDER>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        // Tap: [ | Shift: Cmd+Shift+[
+        lbkt_morph: lbkt_morph {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp LBKT>, <&kp LG(LS(LBKT))>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        // Tap: ] | Shift: Cmd+Shift+]
+        rbkt_morph: rbkt_morph {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp RBKT>, <&kp LG(LS(RBKT))>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
