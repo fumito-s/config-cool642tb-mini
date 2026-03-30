@@ -63,28 +63,28 @@
         combo_esc {
             bindings = <&kp ESC>;
             key-positions = <0 1>;
-            timeout-ms = <18>;
+            timeout-ms = <25>;
             require-prior-idle-ms = <50>;
         };
 
         combo_tab {
             bindings = <&kp TAB>;
             key-positions = <10 11>;
-            timeout-ms = <18>;
+            timeout-ms = <25>;
             require-prior-idle-ms = <50>;
         };
 
         combo_copy {
             bindings = <&kp LG(C)>;
             key-positions = <23 24>;
-            timeout-ms = <18>;
+            timeout-ms = <25>;
             require-prior-idle-ms = <50>;
         };
 
         combo_paste {
             bindings = <&kp LG(V)>;
             key-positions = <24 25>;
-            timeout-ms = <18>;
+            timeout-ms = <25>;
             require-prior-idle-ms = <50>;
         };
 
@@ -92,7 +92,7 @@
         combo_lpar_lbrc {
             bindings = <&lpar_lbrc>;
             key-positions = <19 20>;
-            timeout-ms = <18>;
+            timeout-ms = <25>;
             require-prior-idle-ms = <50>;
         };
 
@@ -100,7 +100,7 @@
         combo_rpar_rbrc {
             bindings = <&rpar_rbrc>;
             key-positions = <20 21>;
-            timeout-ms = <18>;
+            timeout-ms = <25>;
             require-prior-idle-ms = <50>;
         };
     };
