@@ -249,6 +249,16 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
+        // Hold: RSHIFT | Tap: bs_del
+        ht_bs_del: ht_bs_del {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <200>;
+            quick-tap-ms = <175>;
+            bindings = <&kp>, <&bs_del>;
+        };
+
         // Hold: layer | Tap: spc_morph
         lt_spc: lt_spc {
             compatible = "zmk,behavior-hold-tap";
@@ -278,8 +288,8 @@
             bindings = <
 &kp Q         &kp W        &kp E          &kp R          &kp T                                                    &kp Y        &kp U         &kp I      &kp O       &kp P
 &hml LGUI A   &hml LALT S  &hml LSHFT D   &hml LCTRL F   &kp G        &none                  &kp LG(LC(LS(N4)))   &kp H        &hmr LCTRL J  &lt 5 K    &hmr LALT L &hmr LGUI SEMICOLON
-&kp Z         &kp X        &kp C          &kp V          &kp B        &none                  &none                &kp N        &kp M         &comma_morph  &dot_morph  &bs_del
-&kp TAB             &kp LCTRL   &kp LEFT_ALT  &kp LEFT_GUI  &lt_spc 2 0  &kp LSHIFT             &kp RSHIFT           &lt 1 ENTER                             &kp SLASH
+&kp Z         &kp X        &kp C          &kp V          &kp B        &none                  &mo 3                &kp N        &kp M         &comma_morph  &dot_morph  &kp ENTER
+&kp LA(SPACE)       &kp LCTRL   &kp LEFT_ALT  &kp LEFT_GUI  &lt_spc 2 0  &kp LSHIFT             &ht_bs_del RSHIFT 0  &lt 1 ENTER                             &kp SLASH
             >;
 
             sensor-bindings = <&encoder_msc_down_up>;
@@ -311,7 +321,7 @@
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                          &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp LC(PAGE_UP) LC(PAGE_DOWN)>;
+            sensor-bindings = <&inc_dec_kp LC(RIGHT) LC(LEFT)>;
         };
 
         MOUSE {
