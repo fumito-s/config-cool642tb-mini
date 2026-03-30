@@ -75,14 +75,14 @@
         };
 
         combo_copy {
-            bindings = <&kp LC(C)>;
+            bindings = <&kp LG(C)>;
             key-positions = <23 24>;
             timeout-ms = <18>;
             require-prior-idle-ms = <50>;
         };
 
         combo_paste {
-            bindings = <&kp LC(V)>;
+            bindings = <&kp LG(V)>;
             key-positions = <24 25>;
             timeout-ms = <18>;
             require-prior-idle-ms = <50>;
